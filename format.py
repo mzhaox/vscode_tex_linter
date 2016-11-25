@@ -31,7 +31,7 @@ def writer(outfile, lines, char_count=100):
         elif current_len + len(tok) > char_count:
             current_lin[-1] += '\n'
             outfile.write(" ".join(current_lin))
-            current_lin, current_len = [], 0
+            current_lin, current_len = [tok], len(tok) + 1
             last_action_append = True
         else:
             current_lin.append(tok)
